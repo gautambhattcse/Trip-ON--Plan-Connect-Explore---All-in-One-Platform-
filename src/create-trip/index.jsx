@@ -168,6 +168,7 @@ function CreateTrip() {
   const [place, setPlace] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [formData, setFormData] = useState({});
+  const [openDailog, setOpenDailog] = useState(false);
 
   // Fetch location suggestions from LocationIQ API
   const fetchLocationSuggestions = async (input) => {
@@ -203,6 +204,14 @@ function CreateTrip() {
   };
 
   const onGenerateTrip = async () => {
+
+    const user = localStorage.getItem('user');
+
+    if(!user){
+      setOpenDailog(true)
+      return ;
+    }
+
     if (formData?.noOfDays > 5 || !formData?.location || !formData?.budget || !formData?.traveler) {
       toast("Please fill all details correctly!");
       return;
