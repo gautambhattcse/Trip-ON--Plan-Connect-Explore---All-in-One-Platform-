@@ -138,3 +138,23 @@ button:focus-visible {
     @apply bg-background text-foreground;
   }
 }
+
+
+
+/* Scrollbar */
+::-webkit-scrollbar{
+  width: 8px;
+}
+
+::-webkit-scrollbar-track{
+  background-color: #212121;
+}
+
+::-webkit-scrollbar-thumb{
+  background: rgb(39, 198, 129);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #128216;
+}
