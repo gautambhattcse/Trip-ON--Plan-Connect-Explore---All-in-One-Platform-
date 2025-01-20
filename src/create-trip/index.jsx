@@ -158,6 +158,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "@/service/firebaseConfig";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { useNavigate} from "react-router-dom";
 
 const debounce = (func, delay) => {
   let timeoutId;
@@ -175,6 +176,7 @@ function CreateTrip() {
   const [formData, setFormData] = useState({});
   const [openDailog, setOpenDailog] = useState(false);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   // Fetch location suggestions from LocationIQ API
   const fetchLocationSuggestions = async (input) => {
@@ -272,7 +274,7 @@ function CreateTrip() {
       setLoading(true);
       const Final_Prompt = AI_PROMPT.replace(
         "{location}",
-        formData?.location?.label
+        formData?.location                       //location-data
       )
         .replace("{totalDays}", formData?.noOfDays)
         .replace("{traveler}", formData?.traveler)
@@ -303,6 +305,7 @@ function CreateTrip() {
       id: docID,
     });
     setLoading(false);
+    navigate('/view-trip/'+docID)
   };
 
   const GetUserProfile = (tokenInfo) => {
