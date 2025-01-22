@@ -142,7 +142,7 @@ import {
   SelectBudgetList,
   SelectTravelsList,
 } from "@/constants/options";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/button2";
 import { toast } from "sonner";
 import { chatSession } from "@/service/AiModel";
 import { FcGoogle } from "react-icons/fc";
