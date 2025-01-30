@@ -6,15 +6,14 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <div className="flex flex-col items-center w-full gap-9 ">
-      <h1 className="font-extrabold text-[50px] text-center mt-16">
-        <span className="text-[#038C4C]">Trip-ON:</span> <span className="headline">Plan, Connect, Explore</span> 
-        - All in One Platform!
+      <h1 className="font-extrabold text-[50px] text-center mt-16 px-3">
+        {/* <span className="text-[#038C4C]">Trip-ON:</span> <span className="headline">Plan, Connect, Explore</span> 
+        - All in One Platform! */}
+        Trip-On: Plan Smart, Travel Easy!
       </h1>
 
-      <p className="text-xl text-gray-500 text-center">
-        "Discover new destinations, collaborate with travel buddies, and let AI
-        handle the details. Whether you're exploring solo or with friends,
-        Trip-On is your ultimate travel companion."
+      <p className="text-xl text-gray-500 text-center px-10">
+        "Trip-On helps you effortlessly plan your trips with customized itineraries, destination insights, and travel recommendations—all in one place!"
       </p>
       
       <Link to={'/create-trip'}>
